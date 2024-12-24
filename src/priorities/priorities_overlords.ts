@@ -6,13 +6,16 @@ export const OverlordPriority = {
 		// Colony-wide emergencies such as a catastrohic crash
 		bootstrap: 0,
 	},
-
 	core: {
 		// Functionality related to spawning more creeps
 		queen: 100,
 		manager: 101,
 	},
-
+	manual: {
+		//Manual creep spawn
+		manualSpawn:102,
+		manualUpgrade:103
+	},
 	powerCreeps: {
 		default: 150,
 	},
