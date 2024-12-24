@@ -310,6 +310,11 @@ export class OvermindConsole {
 			description: "reset all factories production queues",
 			command: OvermindConsole.resetFactories.bind(OvermindConsole),
 		},
+		{
+			name:"manualSpawn(room,role,number)",
+			description:"manually adds spawns to hatchery queue",
+			command: OvermindConsole.manualCreepSpawn.bind(OvermindConsole)
+		},
 	];
 
 	static init() {
@@ -1058,7 +1063,18 @@ export class OvermindConsole {
 
 		return msg;
 	}
-
+	// Manual hatchery commands
+	static manualCreepSpawn (roomName: string,creepRole:string, spawnNum?: number): void {
+		const colony = Overmind.colonies[roomName];
+		if (!colony) {
+			console.log(`${roomName} is not a valid colony!`);
+			return;
+		}
+		if (!colony.hatchery) {
+			console.log(`${roomName} does not have a hatchery`)
+			return;
+		}
+	}
 	// Memory management ===============================================================================================
 
 	static deepCleanMemory(): void {
