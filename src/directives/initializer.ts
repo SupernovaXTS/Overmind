@@ -15,6 +15,7 @@ import { DirectiveControllerAttack } from "./offense/controllerAttack";
 import { DirectiveHarass } from "./offense/harass";
 import { DirectivePairDestroy } from "./offense/pairDestroy";
 import { DirectiveSwarmDestroy } from "./offense/swarmDestroy";
+import { DirectiveAutoSiege } from "./offense/autoSiege";
 import { DirectiveBaseOperator } from "./powerCreeps/baseOperator";
 import { DirectiveExtract } from "./resource/extract";
 import { DirectiveHarvest } from "./resource/harvest";
@@ -73,6 +74,8 @@ export function DirectiveWrapper(flag: Flag): Directive | undefined {
 					return new DirectiveControllerAttack(flag);
 				case COLOR_WHITE:
 					return new DirectiveHarass(flag);
+				case COLOR_ORANGE:
+					return new DirectiveAutoSiege(flag);
 			}
 			break;
 
