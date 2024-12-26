@@ -20,19 +20,19 @@ export class DirectiveAutoSiege extends Directive {
 
 	memory: DirectiveAutoSiegeMemory;
 
-	// overlords: {
-	// 	scout?: StationaryScoutOverlord;
-	// 	destroy?: SwarmDestroyerOverlord | PairDestroyerOverlord;
-	// 	guard?: OutpostDefenseOverlord;
-	// 	controllerAttack?: ControllerAttackerOverlord;
-	// };
+	overlords: {
+	scout?: StationaryScoutOverlord;
+	destroy?: SwarmDestroyerOverlord | PairDestroyerOverlord;
+	guard?: OutpostDefenseOverlord;
+	controllerAttack?: ControllerAttackerOverlord;
+	};
 
 	constructor(flag: Flag) {
 		super(flag);
 	}
 
 	spawnMoarOverlords() {
-		// this.overlords.destroy = new SwarmDestroyerOverlord(this);
+		this.overlords.destroy = new SwarmDestroyerOverlord(this);
 	}
 
 	init(): void {
